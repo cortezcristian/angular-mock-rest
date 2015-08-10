@@ -1,0 +1,27 @@
+{
+  "name": "angular-mock-rest",
+  "version": "1.0.0",
+  "description": "REST mock",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cortezcristian/angular-mock-rest.git"
+  },
+  "author": "Cristian Cortez <cortez.cristian@gmail.com> (http://cortezcristian.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cortezcristian/angular-mock-rest/issues"
+  },
+  "homepage": "https://github.com/cortezcristian/angular-mock-rest#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "epilogue": "^0.5.2",
+    "express": "^4.13.3",
+    "restify": "^3.0.3",
+    "sequelize": "^3.5.1",
+    "sqlite3": "^3.0.10"
+  }
+}
