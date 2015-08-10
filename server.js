@@ -36,6 +36,7 @@ if (process.env.USE_RESTIFY) {
   var app = express();
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(express.static(process.cwd() + '/public'));
   server = http.createServer(app);
 }
 
