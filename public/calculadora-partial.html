@@ -1,0 +1,14 @@
+<div class="container-calc">
+<h2>Calc</h2>
+<form novalidate ng-submit="ff()" style="clear:both">
+<input name="email" type="text" ng-model="resultado" readonly />
+<ul>
+    <li ng-repeat="n in '123+456-789*/0C='.split('')" 
+        ng-class="{corte:($index % 4 === 0 ) }">
+        <button ng-click="tecla(n)"> 
+            {{n}}
+        </button>
+    </li>
+</ul>
+</form>
+</div>

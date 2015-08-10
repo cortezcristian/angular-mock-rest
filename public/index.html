@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="calcApp">
+  <head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./bower_components/fontawesome/css/font-awesome.min.css"></link>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="./app.js"></script>
+    <style>
+        ul { list-style: none; }
+        ul li {
+            float:left;
+        }
+        ul li.corte {
+            clear: both;
+        }
+        .container-calc {
+         width: 200px;
+         border: 1px solid black;
+         overflow: hidden;
+         padding: 20px;
+        }
+        ul.menu li {padding: 10px;}
+        .preloader {
+         font-size: 154px;
+         color: grey;
+         text-align: center;   
+        }
+        .fa-spin {
+              -webkit-animation: fa-spin 2s infinite linear;
+                animation: fa-spin 2s infinite linear;
+        }
+    </style>
+
+  </head>
+  <body>
+    <h1>
+      <i class="fa fa-calculator"></i>
+      Calculadora
+    </h1>
+    <div ng-controller="calculadoraController">
+        <ul class="menu">
+            <li><a href="#/">Inicio</a></li>
+            <li><a href="#/help">Ayuda</a></li>
+            <li><a href="#/proveedores">Proveedores</a></li>
+            <li ng-repeat="item in menu"><a href="#/">{{item}}</a></li>
+        </ul>
+    </div>
+    <div ng-view style="clear:both"></div>
+  </body>
+</html>
+<!-- PoloTecn0 -->
