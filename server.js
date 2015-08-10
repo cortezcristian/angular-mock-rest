@@ -12,6 +12,15 @@ var User = database.define('User', {
   birthday: Sequelize.DATE
 });
 
+var Employees = database.define('Employees', {
+    idEmployee        : { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	nombre            : Sequelize.STRING,
+	apellido          : Sequelize.STRING,
+	email             : Sequelize.STRING,
+    hashed_password   : Sequelize.STRING
+
+}, {tableName: 'Employees'});
+
 // Initialize server
 var server, app;
 if (process.env.USE_RESTIFY) {
@@ -40,6 +49,12 @@ epilogue.initialize({
 var userResource = epilogue.resource({
   model: User,
   endpoints: ['/users', '/users/:id']
+});
+
+// Create REST resource
+var employeeResource = epilogue.resource({
+  model: Employees,
+  endpoints: ['/employees', '/employees/:id']
 });
 
 // Create database and listen
