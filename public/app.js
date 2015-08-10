@@ -64,12 +64,21 @@ angular
 
         $scope.proveedores = [];
 
+        //GET
         $http.get($rootScope.apis + 'proveedores').then(function(res){
             console.log("success!", res);
             $scope.proveedores = res.data;
         }, function(){
             console.log("error!");
         });
+
+        // POST
+        $http.post($rootScope.apis + 'proveedores', { 
+            nombre: 'Juan'+(Math.trunc(Math.random()*10)+1), 
+            apellido: 'Perez'})
+            .success(function(res){
+                console.log("Creamos", res);    
+            });
 
 
     })

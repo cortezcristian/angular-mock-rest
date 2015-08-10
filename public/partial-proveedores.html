@@ -2,6 +2,20 @@
     <i class="fa fa-refresh fa-5 fa-spin"></i>
 </div>
 <div ng-show="!layout.loading">
-   Contenido
+   <h2>Proveedores</h2>
+   <table>
+     <th>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td></td>
+     </th>
+     <tr ng-repeat="p in proveedores">
+        <td>{{p.idProveedor}}</td>
+        <td>{{p.nombre}}</td>
+        <td>{{p.apellido}}</td>
+        <td></td>
+     </tr>
+   </table>
 </div>
 
