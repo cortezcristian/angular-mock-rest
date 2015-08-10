@@ -12,14 +12,14 @@ var User = database.define('User', {
   birthday: Sequelize.DATE
 });
 
-var Employees = database.define('Employees', {
-    idEmployee        : { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+var Proveedores = database.define('Proveedores', {
+    idProveedor       : { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
 	nombre            : Sequelize.STRING,
 	apellido          : Sequelize.STRING,
 	email             : Sequelize.STRING,
-    hashed_password   : Sequelize.STRING
+    dir               : Sequelize.STRING
 
-}, {tableName: 'Employees'});
+}, {tableName: 'Proveedores'});
 
 // Initialize server
 var server, app;
@@ -52,9 +52,9 @@ var userResource = epilogue.resource({
 });
 
 // Create REST resource
-var employeeResource = epilogue.resource({
-  model: Employees,
-  endpoints: ['/employees', '/employees/:id']
+var proveedorResource = epilogue.resource({
+  model: Proveedores,
+  endpoints: ['/proveedores', '/proveedores/:id']
 });
 
 // Create database and listen
