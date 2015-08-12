@@ -63,6 +63,14 @@ angular
         console.log("cargo proveedores controller");
 
         $scope.proveedores = [];
+        $scope.guardarProveedor = function(prov){
+            // POST
+            $http.post($rootScope.apis + 'proveedores', prov)
+                .success(function(res){
+                    console.log("Creamos", res);    
+                    alert("guardado!");
+                });
+        };
 
         //GET
         $http.get($rootScope.apis + 'proveedores').then(function(res){
@@ -72,13 +80,6 @@ angular
             console.log("error!");
         });
 
-        // POST
-        $http.post($rootScope.apis + 'proveedores', { 
-            nombre: 'Juan'+(Math.trunc(Math.random()*10)+1), 
-            apellido: 'Perez'})
-            .success(function(res){
-                console.log("Creamos", res);    
-            });
 
 
     })
@@ -88,7 +89,7 @@ angular
 
         $http.get('./json/menu.json').then(function(res){
             console.log("success!", res);
-            $scope.menu = res.data;
+            //$scope.menu = res.data;
         }, function(){
             console.log("error!");
         });

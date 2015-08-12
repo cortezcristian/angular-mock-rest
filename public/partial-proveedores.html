@@ -2,19 +2,26 @@
     <i class="fa fa-refresh fa-5 fa-spin"></i>
 </div>
 <div ng-show="!layout.loading">
+    <input type="text" ng-model="buscar" placeholder="Buscar..." />
    <h2>Proveedores</h2>
-   <table>
-     <th>
-        <td>ID</td>
-        <td>Nombre</td>
-        <td>Apellido</td>
-        <td></td>
-     </th>
-     <tr ng-repeat="p in proveedores">
-        <td>{{p.idProveedor}}</td>
+
+   <form name="proveedorNuevo" ng-submit="guardarProveedor(proveedorNuevo)" novalidate>
+    <input type="text" ng-model="proveedorNuevo.nombre" />
+    <button type="submit">Guardar</button>
+   </form>
+
+   <table class="table">
+     <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Opciones</th>
+     </tr>
+     <tr ng-repeat="p in proveedores | filter: buscar">
+        <td><b>{{p.idProveedor}}</b></td>
         <td>{{p.nombre}}</td>
         <td>{{p.apellido}}</td>
-        <td></td>
+        <td>Editar | Borrar </td>
      </tr>
    </table>
 </div>

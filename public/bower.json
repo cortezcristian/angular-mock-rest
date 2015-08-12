@@ -16,6 +16,7 @@
   "dependencies": {
     "angular": "1.4.3",
     "angular-route": "~1.4.3",
-    "fontawesome": "~4.4.0"
+    "fontawesome": "~4.4.0",
+    "angular-bootstrap": "~0.13.3"
   }
 }
