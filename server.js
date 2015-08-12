@@ -8,16 +8,16 @@ var database = new Sequelize('database', '', '', {
        storage: 'db/database.sqlite'
  });
 var User = database.define('User', {
-  username: Sequelize.STRING,
-  birthday: Sequelize.DATE
+  username : Sequelize.STRING,
+  birthday : Sequelize.DATE
 });
 
 var Proveedores = database.define('Proveedores', {
-    idProveedor       : { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-	nombre            : Sequelize.STRING,
-	apellido          : Sequelize.STRING,
-	email             : Sequelize.STRING,
-    dir               : Sequelize.STRING
+    id       : { type            : Sequelize.INTEGER, primaryKey : true, autoIncrement : true },
+	nombre   : Sequelize.STRING,
+	apellido : Sequelize.STRING,
+	email    : Sequelize.STRING,
+    dir      : Sequelize.STRING
 
 }, {tableName: 'Proveedores'});
 
