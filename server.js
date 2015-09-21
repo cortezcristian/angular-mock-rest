@@ -21,6 +21,15 @@ var Proveedores = database.define('Proveedores', {
 
 }, {tableName: 'Proveedores'});
 
+var Clientes = database.define('Clientes', {
+    id       : { type            : Sequelize.INTEGER, primaryKey : true, autoIncrement : true },
+	nombre   : Sequelize.STRING,
+	apellido : Sequelize.STRING,
+	email    : Sequelize.STRING,
+	telefono : Sequelize.STRING,
+    direccion: Sequelize.STRING
+}, {tableName: 'Clientes'});
+
 // Initialize server
 var server, app;
 if (process.env.USE_RESTIFY) {
