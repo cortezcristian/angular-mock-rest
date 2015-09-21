@@ -74,6 +74,12 @@ var proveedorResource = epilogue.resource({
   endpoints: ['/proveedores', '/proveedores/:id']
 });
 
+// Create REST resource
+var proveedorResource = epilogue.resource({
+  model: Clientes,
+  endpoints: ['/clientes', '/clientes/:id']
+});
+
 // Create database and listen
 database
   .sync({ force: true })
